@@ -1,4 +1,5 @@
 <?php
+header("Access-Control-Allow-Origin: *");
 $string = $_GET["string"];
 $noblank_string = trim(preg_replace('/\s+/', ' ', $string));
 $array = ["string" => $string,

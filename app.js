@@ -19,7 +19,6 @@ function Equation() {
 async function GetPalindromeAnswer(url) {
   const response = await fetch(url);
   const data = await response.json();
-  console.log(data.string);
   if (data.palindrome === true && data.string != "") {
     document.getElementById("result-2").innerHTML = "It's a Palindrome!";
   } else if (data.string === "") {
@@ -36,5 +35,21 @@ function Palindrome() {
   GetPalindromeAnswer(api2_url);
 }
 
+async function GetCleanedAnswer(url) {
+  const response = await fetch(url);
+  const data = await response.json();
+  document.getElementById(
+    "result-3"
+  ).innerHTML = `Cleaned String: '${data.cleaned_string}'`;
+}
+
+function NoExtraSpace() {
+  let string = GetValue("no-space");
+  let api3_url =
+    "http://localhost/4APIs-Assignment/php/API-3.php?string=" + string;
+  GetCleanedAnswer(api3_url);
+}
+
 document.getElementById("button-1").addEventListener("click", Equation);
 document.getElementById("button-2").addEventListener("click", Palindrome);
+document.getElementById("button-3").addEventListener("click", NoExtraSpace);
