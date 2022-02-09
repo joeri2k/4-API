@@ -16,10 +16,7 @@
     <div id="container2">
       <div class="api">
         <h1>API - 1</h1>
-        <p>
-          Insert the value of X and Y to calculate the following Equation:<br />
-          (2 * x + y % 2)
-        </p>
+        <p>Insert the value of X and Y to calculate the following Equation:</p>
         <div class="insert-number">
           <input type="number" id="numb-x" placeholder="X Value" />
           <button class="calculate-button">
@@ -30,8 +27,8 @@
         <div>
           <table>
             <tr>
-              <td><h2>Result:</h2></td>
-              <td><h2 id="result-1">5</h2></td>
+              <td><h2>2 * x + y % 2 =</h2></td>
+              <td><h2 id="result-1"></h2></td>
             </tr>
           </table>
         </div>
@@ -41,17 +38,12 @@
         <p>Insert a Word to check if it's a Palindrome or Not:</p>
         <div class="insert-text">
           <input type="text" id="palindrome" placeholder="Insert String" />
-          <button class="go-button">
+          <button class="go-button" id="button-2">
             <img src="assets/go-button.png" />
           </button>
         </div>
         <div>
-          <table>
-            <tr>
-              <td><h2>Result:</h2></td>
-              <td><h2 id="result-2">5</h2></td>
-            </tr>
-          </table>
+          <h2 id="result-2"></h2>
         </div>
       </div>
       <div class="api">
@@ -96,5 +88,6 @@
         </div>
       </div>
     </div>
+    <script src="app.js"></script>
   </body>
 </html>

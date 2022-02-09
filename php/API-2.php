@@ -1,4 +1,5 @@
 <?php
+header("Access-Control-Allow-Origin: *");
 $string = $_GET["string"];
 $reversed = strrev ( $string );
 $palindrome = false;
@@ -7,6 +8,6 @@ if($string == $reversed){
 }
 $array = ["string" => $string,
         "reversed" => $reversed,
-        "palindrom" => $palindrome];
+        "palindrome" => $palindrome];
 echo json_encode($array);
 ?>
