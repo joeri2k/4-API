@@ -3,6 +3,19 @@ function GetValue(id) {
   return input_name;
 }
 
+async function GetEquationAnswer(url) {
+  const response = await fetch(url);
+  const data = await response.json();
+  document.getElementById("result-1").innerHTML = " " + data.result;
+}
+
+function Equation() {
+  let x = GetValue("numb-x");
+  let y = GetValue("numb-y");
+  let api1_url = `http://localhost/4APIs-Assignment/php/API-1.php?x=${x}&y=${y}`;
+  GetEquationAnswer(api1_url);
+}
+
 async function GetPalindromeAnswer(url) {
   const response = await fetch(url);
   const data = await response.json();
@@ -21,19 +34,6 @@ function Palindrome() {
   let api2_url =
     "http://localhost/4APIs-Assignment/php/API-2.php?string=" + string;
   GetPalindromeAnswer(api2_url);
-}
-
-async function GetEquationAnswer(url) {
-  const response = await fetch(url);
-  const data = await response.json();
-  document.getElementById("result-1").innerHTML = " " + data.result;
-}
-
-function Equation() {
-  let x = GetValue("numb-x");
-  let y = GetValue("numb-y");
-  let api1_url = `http://localhost/4APIs-Assignment/php/API-1.php?x=${x}&y=${y}`;
-  GetEquationAnswer(api1_url);
 }
 
 document.getElementById("button-1").addEventListener("click", Equation);
