@@ -3,7 +3,7 @@ header("Access-Control-Allow-Origin: *");
 $string = $_GET["string"];
 $reversed = strrev ( $string );
 $palindrome = false;
-if($string == $reversed){
+if(strtolower($string) == strtolower($reversed)){
     $palindrome = true;
 }
 $array = ["string" => $string,
