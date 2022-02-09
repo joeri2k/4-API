@@ -6,9 +6,12 @@ function GetValue(id) {
 async function GetPalindrome(url) {
   const response = await fetch(url);
   const data = await response.json();
-  if (data.palindrome === true) {
+  console.log(data.string);
+  if (data.palindrome === true && data.string != "") {
     document.getElementById("result-2").innerHTML = "It's a Palindrome!";
-  } else {
+  } else if (data.string === "") {
+    document.getElementById("result-2").innerHTML = "Please Enter a Word";
+  } else if (data.palindrome === false && data.string != "") {
     document.getElementById("result-2").innerHTML = "It's Not a Palindrome!";
   }
 }
