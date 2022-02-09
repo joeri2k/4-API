@@ -1,8 +1,10 @@
+// ------ Gets value inserted ------
 function GetValue(id) {
   let input_name = document.getElementById(id).value;
   return input_name;
 }
 
+//--------- API - 1 ----------------------
 async function GetEquationAnswer(url) {
   const response = await fetch(url);
   const data = await response.json();
@@ -16,6 +18,7 @@ function Equation() {
   GetEquationAnswer(api1_url);
 }
 
+// --------- API - 2 -------------------------
 async function GetPalindromeAnswer(url) {
   const response = await fetch(url);
   const data = await response.json();
@@ -35,6 +38,7 @@ function Palindrome() {
   GetPalindromeAnswer(api2_url);
 }
 
+//---------- API - 3 ----------------------
 async function GetCleanedAnswer(url) {
   const response = await fetch(url);
   const data = await response.json();
@@ -50,6 +54,7 @@ function NoExtraSpace() {
   GetCleanedAnswer(api3_url);
 }
 
+// -------- API - 4 --------------------------------
 async function GetPasswordConfirmation(url) {
   const response = await fetch(url);
   const data = await response.json();
@@ -67,7 +72,7 @@ function Password() {
     "http://localhost/4APIs-Assignment/php/API-4.php?password=" + password;
   GetPasswordConfirmation(api4_url);
 }
-
+//---------------------- Event Listeners for Buttons -----------------------
 document.getElementById("button-1").addEventListener("click", Equation);
 document.getElementById("button-2").addEventListener("click", Palindrome);
 document.getElementById("button-3").addEventListener("click", NoExtraSpace);
